@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <!-- 头像 + 相机图标 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="30dp">
+
+            <ImageView
+                android:id="@+id/iv_avatar_edit"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:background="#EEEEEE"
+                android:contentDescription="@string/hint_avatar"
+                android:layout_marginStart="60dp" />
+
+            <ImageView
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="30dp"
+                android:src="@android:drawable/ic_menu_camera"
+                android:contentDescription="camera" />
+        </LinearLayout>
+
+        <!-- 姓名输入框 -->
+        <EditText
+            android:id="@+id/et_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/et_name_hint"
+            android:inputType="textPersonName"
+            android:layout_marginBottom="15dp" />
+
+        <!-- 学号输入框 -->
+        <EditText
+            android:id="@+id/et_student_id"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/et_student_id_hint"
+            android:inputType="number"
+            android:layout_marginBottom="15dp" />
+
+        <!-- 电话输入框 -->
+        <EditText
+            android:id="@+id/et_phone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/et_phone_hint"
+            android:inputType="phone"
+            android:layout_marginBottom="15dp" />
+
+        <!-- 邮箱输入框 -->
+        <EditText
+            android:id="@+id/et_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/et_email_hint"
+            android:inputType="textEmailAddress"
+            android:layout_marginBottom="20dp" />
+
+        <!-- 性别单选 -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/label_gender_title"
+            android:textSize="16sp"
+            android:layout_marginBottom="8dp" />
+
+        <RadioGroup
+            android:id="@+id/rg_gender"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="20dp">
+
+            <RadioButton
+                android:id="@+id/rb_male"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/radio_male"
+                android:layout_marginEnd="30dp" />
+
+            <RadioButton
+                android:id="@+id/rb_female"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/radio_female" />
+        </RadioGroup>
+
+        <!-- 爱好多选 -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/label_hobby_title"
+            android:textSize="16sp"
+            android:layout_marginBottom="8dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="30dp">
+
+            <CheckBox
+                android:id="@+id/cb_travel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/check_travel"
+                android:layout_marginEnd="15dp" />
+
+            <CheckBox
+                android:id="@+id/cb_reading"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/check_reading"
+                android:layout_marginEnd="15dp" />
+
+            <CheckBox
+                android:id="@+id/cb_game"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/check_game"
+                android:layout_marginEnd="15dp" />
+
+            <CheckBox
+                android:id="@+id/cb_shopping"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/check_shopping" />
+        </LinearLayout>
+
+        <!-- 保存和取消按钮 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btn_save"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginEnd="20dp"
+                android:text="@string/btn_save"
+                android:background="#E8B4B8" />
+
+            <Button
+                android:id="@+id/btn_cancel"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginStart="20dp"
+                android:text="@string/btn_cancel"
+                android:background="#E8B4B8" />
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>

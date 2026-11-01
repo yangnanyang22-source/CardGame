@@ -1,0 +1,45 @@
+<resources>
+    <string name="app_name">杨楠2024110539</string>
+    <string name="title_main">杨楠2024110539</string>
+    <string name="title_edit">信息修改</string>
+    <string name="title_game">翻牌游戏</string>
+
+    <!-- 主界面文字 -->
+    <string name="hint_avatar">头像</string>
+    <string name="label_name">姓名：</string>
+    <string name="label_gender">性别：</string>
+    <string name="label_student_id">学号：</string>
+    <string name="label_phone">电话：</string>
+    <string name="label_email">邮件地址：</string>
+    <string name="label_hobby">爱好：</string>
+    <string name="label_high_score">游戏最高分：</string>
+
+    <!-- 按钮文字 -->
+    <string name="btn_edit_info">修改个人信息</string>
+    <string name="btn_start_game">翻牌游戏</string>
+    <string name="btn_save">保存</string>
+    <string name="btn_cancel">取消</string>
+    <string name="btn_reset">重置游戏</string>
+    <string name="btn_exit">退出</string>
+
+    <!-- 信息修改界面输入框提示 -->
+    <string name="et_name_hint">姓名</string>
+    <string name="et_student_id_hint">学号</string>
+    <string name="et_phone_hint">电话号码</string>
+    <string name="et_email_hint">电子邮件地址</string>
+
+    <!-- 性别单选 -->
+    <string name="radio_male">男</string>
+    <string name="radio_female">女</string>
+    <string name="label_gender_title">性别：</string>
+
+    <!-- 爱好多选 -->
+    <string name="check_travel">旅游</string>
+    <string name="check_reading">阅读</string>
+    <string name="check_game">游戏</string>
+    <string name="check_shopping">购物</string>
+    <string name="label_hobby_title">爱好：</string>
+
+    <!-- 游戏界面 -->
+    <string name="label_score">得分：</string>
+</resources>

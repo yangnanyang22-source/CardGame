@@ -1,0 +1,4 @@
+<resources>
+    <style name="Theme.CardGame" parent="Theme.MaterialComponents.DayNight.DarkActionBar.Bridge">
+    </style>
+</resources>
