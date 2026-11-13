@@ -5,6 +5,9 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import android.view.Menu
+import android.view.MenuItem
+import androidx.appcompat.app.AlertDialog
 
 class MainActivity : AppCompatActivity() {
 
@@ -66,6 +69,34 @@ class MainActivity : AppCompatActivity() {
             intent.putExtra(EXTRA_HIGH_SCORE, highScore)
             startActivityForResult(intent, REQUEST_GAME)
         }
+    }
+
+
+    // 创建菜单
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        menuInflater.inflate(R.menu.menu_main, menu)
+        return true
+    }
+
+    // 菜单点击事件
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            R.id.menu_about -> {
+                // 弹出关于对话框
+                AlertDialog.Builder(this)
+                    .setTitle(R.string.dialog_about_title)
+                    .setMessage(R.string.dialog_about_message)
+                    .setPositiveButton(R.string.btn_ok, null)
+                    .show()
+                return true
+            }
+            R.id.menu_exit -> {
+                // 退出APP
+                finish()
+                return true
+            }
+        }
+        return super.onOptionsItemSelected(item)
     }
 
     // 接收从其他页面返回的数据
