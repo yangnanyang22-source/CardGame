@@ -1,6 +1,8 @@
 package cn.edu.sicnu.cs.yn.cardgame.model
 
-class CardMatchingGame(count: Int) {
+import java.io.Serializable
+
+class CardMatchingGame(count: Int) : Serializable {
     var score = 0
         private set
 
@@ -34,25 +36,24 @@ class CardMatchingGame(count: Int) {
             } else {
                 // 找出当前已经选中但还没配对的牌
                 val chosenCards = cards.filter { it.isChosen && !it.isMatched }
+                val requiredOtherCards = if (cards.size == 2) 1 else 2
 
-                if (chosenCards.size < 2) {
-                    // 已经选了0或1张，直接翻开
+                if (chosenCards.size < requiredOtherCards) {
+                    // 还没有选够需要参与配对的牌，直接翻开
                     card.isChosen = true
                     score -= COST_TO_CHOOSE
-                } else if (chosenCards.size == 2) {
-                    // 已经选了2张，现在选第3张，开始判断配对
+                } else if (chosenCards.size == requiredOtherCards) {
+                    // 已选牌数量足够，开始判断配对
                     val matchScore = card.match(chosenCards.toTypedArray())
                     if (matchScore > 0) {
                         // 配对成功
                         score += matchScore * MATCH_BONUS
                         card.isMatched = true
-                        chosenCards[0].isMatched = true
-                        chosenCards[1].isMatched = true
+                        chosenCards.forEach { it.isMatched = true }
                     } else {
-                        // 配对失败，扣分，把前两张翻回去
+                        // 配对失败，扣分，把之前翻开的牌翻回去
                         score -= MISMATCH_PENALTY
-                        chosenCards[0].isChosen = false
-                        chosenCards[1].isChosen = false
+                        chosenCards.forEach { it.isChosen = false }
                         card.isChosen = true
                     }
                 }
@@ -71,5 +72,20 @@ class CardMatchingGame(count: Int) {
                 cards.add(card)
             }
         }
+    }
+
+    fun dealMatchingCards(count: Int) {
+        score = 0
+        cards.clear()
+
+        val rank = Card.rankStrings.random()
+        val suits = Card.validSuits.toList().shuffled().take(count)
+        for (suit in suits) {
+            cards.add(Card(suit, rank))
+        }
+    }
+
+    companion object {
+        private const val serialVersionUID = 1L
     }
 }

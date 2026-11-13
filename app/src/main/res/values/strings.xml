@@ -47,4 +47,17 @@
     <string name="dialog_about_title">关于翻牌游戏</string>
     <string name="dialog_about_message">翻牌游戏APP\n姓名：杨楠\n学号：2024110539\n版本：v1.0</string>
     <string name="btn_ok">确定</string>
+
+    <!-- 实验六 Fragment 页面 -->
+    <string name="tab_profile">个人信息</string>
+    <string name="tab_two_cards">2张牌</string>
+    <string name="tab_three_cards">3张牌</string>
+    <string name="placeholder_profile">个人信息页面</string>
+    <string name="placeholder_two_cards">2张牌翻牌游戏</string>
+    <string name="placeholder_three_cards">3张牌翻牌游戏</string>
+    <string name="profile_saved_hint">修改后会自动保存，重新打开应用仍可恢复</string>
+    <string name="game_two_tip">点击两张牌翻开，牌面相同即配对成功</string>
+    <string name="game_three_tip">依次点击三张牌，点数相同即配对成功</string>
+    <string name="game_all_matched">全部配对成功！</string>
+    <string name="game_saved_hint">游戏进度会自动保存，重新打开应用仍可继续</string>
 </resources>
