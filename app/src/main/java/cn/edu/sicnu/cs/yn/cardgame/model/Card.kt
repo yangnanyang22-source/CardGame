@@ -13,11 +13,29 @@ class Card(val suit: String, val rank: String, var isChosen: Boolean = false, va
     fun match(otherCards: Array<Card>): Int {
         var score = 0
         if (otherCards.size == 1) {
+            // 两张牌配对
             val otherCard = otherCards[0]
             if (otherCard.rank == rank) {
                 score = 4
             } else if (otherCard.suit == suit) {
                 score = 1
+            }
+        } else if (otherCards.size == 2) {
+            // 三张牌配对
+            val card1 = otherCards[0]
+            val card2 = otherCards[1]
+            // 三张同点数
+            if (card1.rank == rank && card2.rank == rank) {
+                score = 20
+            }
+            // 三张同花色
+            else if (card1.suit == suit && card2.suit == suit) {
+                score = 10
+            }
+            // 两张同点数 + 一张同花色
+            else if ((card1.rank == rank && card2.suit == suit) ||
+                (card2.rank == rank && card1.suit == suit)) {
+                score = 5
             }
         }
         return score

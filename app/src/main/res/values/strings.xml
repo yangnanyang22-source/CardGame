@@ -42,4 +42,9 @@
 
     <!-- 游戏界面 -->
     <string name="label_score">得分：</string>
+
+    <string name="menu_about">关于</string>
+    <string name="dialog_about_title">关于翻牌游戏</string>
+    <string name="dialog_about_message">翻牌游戏APP\n姓名：杨楠\n学号：2024110539\n版本：v1.0</string>
+    <string name="btn_ok">确定</string>
 </resources>
